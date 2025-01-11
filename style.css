@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sofadi+One&family=Space+Grotesk:wght@300..700&display=swap");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutra-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+  --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+.pattern-lines {
+  position: absolute;
+  z-index: -1;
+  top: -2rem;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  font-family: "Inconsolata", serif;
+}
+
+body {
+  background-image: url(./images/background-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.pattern-lines {
+  position: absolute;
+  z-index: -1;
+  top: -2rem;
+}
+
+.pattern-circle-1 {
+  position: absolute;
+  transform: translate(10%, -50%);
+  z-index: -1;
+}
+
+.pattern-circle-2 {
+  position: absolute;
+  transform: translate(400%, 170%);
+  z-index: -1;
+}
+
+.pattern-squigly {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  z-index: -1;
+}
+
+.patter-squigly-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+main {
+  width: 50%;
+  margin: 2rem auto 0;
+  flex: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--Neutral-0);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.conf-motiv p {
+  color: var(--Neutra-300);
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+form {
+  width: 60%;
+  margin: 2rem auto;
+}
+
+label {
+  display: block;
+  color: var(--Neutra-300);
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  background: var(--Neutra-300);
+}
+
+.upload-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#image-preview {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#preview {
+  width: 3rem;
+  border-radius: 0.5rem;
+}
+
+#drop-area {
+  top: -0.5rem;
+  left: -11rem;
+  padding: 3.4rem 12.5rem;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: -1;
+}
+
+#drop-area.dragging {
+  border-color: #000;
+  background: var(--Neutral-500);
+}
+
+.actions {
+  justify-content: space-between;
+  display: none;
+  gap: 1rem;
+}
+
+.actions button {
+  padding: 0 7px;
+  background: var(--Neutral-500);
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  height: fit-content;
+  border-radius: 0.2rem;
+  color: var(--Neutral-0);
+}
+
+.actions button:hover {
+  background-color: #ddd;
+}
+
+.avatar {
+  width: 100%;
+  border: 1px dashed var(--Neutra-300);
+  height: 7rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--Neutra-300);
+  background: var(--Neutral-700);
+}
+
+.upload-size {
+  display: flex;
+  gap: 1rem;
+  color: var(--Neutra-300);
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  height: 2.5rem;
+  background: var(--Neutral-700);
+  border-radius: 0.5rem;
+  border: 1px solid var(--Neutra-300);
+  margin-bottom: 2rem;
+}
+
+input::placeholder {
+  color: var(--Neutral-0);
+}
+
+button {
+  width: 100%;
+  background: var(--Orange-700);
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  border-style: none;
+  margin: 1rem 0 1rem;
+}
+
+section {
+  display: none;
+  width: 50%;
+  margin: 4rem auto 20rem;
+}
+
+.congrats span {
+  background-image: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ticket-info {
+  width: 60%;
+  margin: 2rem auto 0;
+}
+
+.ticket-info p {
+  color: var(--Neutra-300);
+  padding: 0 1rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.ticket {
+  position: relative;
+}
+
+.index-1 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.index-1 span {
+  color: var(--Neutra-300);
+  margin-top: 1rem;
+  margin-left: 3rem;
+  font-size: 0.85rem;
+}
+
+.gen-img {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.gen-img .info {
+  position: absolute;
+  top: 0.5rem;
+  left: 4rem;
+  width: 100%;
+}
+
+.gen-img .info .gen-name {
+  margin-bottom: -1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: -0.6rem;
+}
+
+.gengit-img {
+  display: flex;
+  align-items: center;
+}
+
+.gengit-img img {
+  margin: 0 -2.7rem -1rem 0.3rem;
+  width: 2rem;
+}
+
+.gengit-img span {
+  font-size: 1.2rem;
+}
+
+.gen-img .generated-image {
+  width: 4rem;
+  border-radius: 0.5rem;
+}
+
+input[type="text"] + span,
+input[type="email"] + span {
+  position: relative;
+  display: none;
+}
+
+input[type="text"]:invalid + span::before,
+input[type="email"]:invalid + span::before {
+  content: "Can't be left blank";
+  color: var(--Orange-500);
+  position: absolute;
+  top: -2rem;
+  font-size: 0.8rem;
+}
+
+input[type="email"]:invalid + span::before {
+  content: "Please enter a valid email address";
+}
+
+/* Tablet */
+@media only screen and (max-width: 48em) {
+  body {
+    background-image: url(./images/background-tablet.png);
+  }
+
+  .pattern-squigly {
+    width: 20%;
+  }
+
+  .pattern-circle-1 {
+    display: none;
+  } 
+
+  .pattern-circle-2 {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .conf-motiv p {
+    padding:0 3rem;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .ticket-info {
+    width: 100%;
+  }
+
+  .gen-img {
+    margin-top: 1rem;
+  }
+
+  .gen-img .info .gen-name {
+    margin-left: -1rem;
+  }
+
+}
+
+/* Mobile */
+@media only screen and (max-width: 30em) {
+  body {
+    background-image: url("./images/background-mobile.png");
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 48.0625) {
+  body {
+    background-image: url("./images/background-desktop.png");
+  }
+}

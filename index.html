@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta name="description" content="Conference ticket generator" />
+    <meta name="keywords" content="tickets, conference ticket" />
+    <meta name="author" content="Tabong Philip" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/155891814__1_-removebg-preview.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Conference ticket generator</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: var(--Neutral-0);
+        margin-top: 8rem;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pattern-lines">
+      <img src="./images/pattern-lines.svg" aria-hidden="true" />
+    </div>
+    <div class="pattern-circle-1">
+      <img src="./images/pattern-circle.svg" aria-hidden="true" />
+    </div>
+    <div class="pattern-circle-2">
+      <img src="./images/pattern-circle.svg" aria-hidden="true" />
+    </div>
+    <div class="pattern-squigly">
+      <img src="./images/pattern-squiggly-line-top.svg" aria-hidden="true" />
+    </div>
+
+    <!-- Form starts -->
+    <header>
+      <img src="./images/logo-full.svg" aria-hidden="true" />
+    </header>
+
+    <main>
+      <div class="conf-motiv">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </div>
+      <form action="">
+        <label for="avatar">Upload Avatar</label>
+        <div class="avatar">
+          <div class="file-input-wrapper">
+            <input
+              type="file"
+              id="file-upload"
+              class="file-input"
+              max="500KB"
+              onchange="displayImage(event)"
+            />
+            <label for="file-upload" class="file-label">
+              <img
+                src="./images/icon-upload.svg"
+                alt="Upload Icon"
+                class="upload-icon"
+              />
+            </label>
+            <div id="drop-area" class="drop-area"></div>
+          </div>
+          <div id="image-preview">
+            <img
+              id="preview"
+              src="#"
+              alt="Image Preview"
+              style="display: none"
+            />
+            <div class="actions">
+              <button id="remove-image" onclick="removeImage()">
+                Remove image
+              </button>
+              <button id="change-image">Change image</button>
+            </div>
+          </div>
+          <p>Drag and drop or click to upload</p>
+        </div>
+        <div class="upload-size">
+          <img src="./images/icon-info.svg" aria-hidden="true" />
+          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
+        <div class="name">
+          <label for="fullName">Full Name</label>
+          <input
+            class="fullname"
+            type="text"
+            name="name"
+            id="fullName"
+            required
+            maxlength="15"
+          />
+          <span class="error"></span>
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder=" someone@example.com"
+            required
+          />
+          <span class="error"></span>
+        </div>
+        <div class="github">
+          <label for="github">GitHub Username</label>
+          <input
+            type="text"
+            name="github"
+            id="github"
+            placeholder=" @yourusername"
+            required
+            class="github-info"
+          />
+          <span class="error"></span>
+        </div>
+        <button type="button" id="submit">Generate My Ticket</button>
+      </form>
+    </main>
+    <div class="patter-squigly-bottom">
+      <img src="./images/pattern-squiggly-line-bottom.svg" aria-hidden="true" />
+    </div>
+
+    <section>
+      <div class="congrats">
+        <h1>Congrats, <span></span> Your ticket is ready.</h1>
+      </div>
+      <div class="ticket-info">
+        <p>
+          We've emailed your ticket to
+          <span style="color: var(--Orange-700)"></span>and will send updates in
+          the run up to the event.
+        </p>
+        <div class="ticket">
+          <img src="./images/pattern-ticket.svg" aria-hidden="true" />
+          <div class="index-1">
+            <div class="logo-info">
+              <img src="./images/logo-full.svg" aria-hidden="true" />
+            </div>
+            <span>Jan 31, 2025 / Austin, TX</span>
+            <div class="gen-img">
+              <img class="generated-image" src="" aria-hidden="true" />
+              <div class="info">
+                <p class="gen-name"></p>
+                <div class="gengit-img">
+                <img src="./images/icon-github.svg" aria-hidden="true" />
+                <span class="gen-github"></span>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generated tickets ends -->
+    </section>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://myportfolio-theta-plum.vercel.app/#">Tabong Philip</a>.
+    </footer>
+  </body>
+</html>
